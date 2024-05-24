@@ -14,14 +14,21 @@ body {
   width: 100vw;
 }
 
-.header-colored-bg {
+/* background Shape */
+.container {
+  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.35));
   width: 100vw;
-  height: 55%;
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   z-index: -1;
+}
+
+.shape {
+  width: 100vw;
+  height: 55%;
   clip-path: polygon(0 0, 100% 0%, 100% 49%, 0% 100%);
   background-color: cornflowerblue;
 }
@@ -33,17 +40,12 @@ li {
 
 .overAllTopContainer {
   max-width: 1200px;
-  min-height: 100vh;
-  margin: 2rem 10rem;
+  margin: 0 4rem;
 }
 
-
 /* Header section */
-
 header {
-  margin-top: 4rem;
-  /* background-color: burlywood; */
-  min-height: 60vh;
+  margin-top: 6rem;
 }
 
 .headerContentContaienr > img {
@@ -58,6 +60,7 @@ header {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .user-Name {
@@ -78,13 +81,20 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
+.about-content > h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
 p {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
   color: rgb(46, 45, 45);
+  line-height: 1.2;
+  font-size: 17px;
 }
 
 h1 {
@@ -98,40 +108,69 @@ h1 {
   justify-content: end;
 }
 
-/* Work show case section */
-section {
-  margin-top: 5rem;
-  background-color: cadetblue;
-}
-
-section > h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-}
-
-
-
-
-@media screen and (max-width: 1150px) {
-  .headerContentContaienr > img {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    top: 0;
+@media screen and (max-width: 926px) {
+  .headerContentContaienr {
+    display: block;
   }
-  .about-content {
-    align-items: center;
-    justify-content: end;
-    position: absolute;
-    top: 7rem;
-    padding-top: 10rem;
-    z-index: -1;
+
+  .headerContentContaienr > img {
+    position: unset;
+    width: 250px;
+    height: 250px;
+    float: left;
+    transform: translate(-3rem, -2rem) scale(1.1);
+    border-radius: 50%;
   }
 
   .user-Name {
-    top: 3.5rem;
-    left: 15rem;
+    top: -2.7rem;
+    left: -2rem;
+    font-size: 2.4rem;
+    letter-spacing: 0px;
     color: white;
+    justify-content: end;
+  }
+  .about-content {
+    display: block;
+    padding: 5rem 2rem 2rem 2rem;
+  }
+
+  .about-content > h2,
+  p {
+    padding-bottom: 1.6rem;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .headerContentContaienr {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  }
+  .headerContentContaienr > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0;
+    transform: translateY(-3rem);
+
+  }
+
+  .user-Name {
+    position: unset;
+    font-size: 2rem;
+    justify-content: center;
+    width: fit-content;
+    transform: translateY(-3rem);
+    color: cornflowerblue;
+  }
+
+  .about-content {
+    padding-top: 1rem;
+    top: 9rem;
+    box-shadow: none;
   }
 
   .overAllTopContainer {
@@ -139,85 +178,10 @@ section > h1 {
   }
 }
 
-@media screen and (max-width: 830px) {
-  .about-content {
-    padding-top: 17rem;
-  }
-  .headerContentContaienr  > img{
-    position: unset;
-  }
-  .user-Name {
-    position: unset;
-    color: cornflowerblue;
-    width: fit-content;
-    height: fit-content;
-  }
-  
-  .headerContentContaienr {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .headerContentContaienr > img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-  }
-
-  .user-Name {
-    font-size: 2rem;
-  }
-
-  .about-content {
-    padding-top: 7rem;
-    top: 9rem;
-  }
-
-  header {
-    min-height: 70vh;
-  }
-}
-
-
-
-/* .card-container {
-  display: grid;
-  grid-template: none / repeat(
-      auto-fit,
-      minmax(min(18rem, 100%), 1fr)
-    );
-  gap: 1.5rem;
-}
-
-.card {
-  max-width: 320px;
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-}
-
-.card-img-contaienr {
-  width: 320px;
-  height: 200px;
-  background-color: aqua;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px 10px 0 0;
-}
-
-.card-description {
-  padding: 0.5rem 1rem 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-} */
 
 /* Contect section */
 
-footer {
+/* footer {
   min-height: 200px;
   width: 100%;
   background-color: cornflowerblue;
@@ -227,7 +191,6 @@ footer {
   padding: 2rem;
 }
 .contect-Menu {
-  /* background-color: bisque; */
   max-width: 1000px;
   width: 100%;
   display: flex;
@@ -243,5 +206,4 @@ footer {
 .socialMedia-links-atFooter > i {
   font-size: 2rem;
   margin-right: 1rem;
-}
-
+} */
